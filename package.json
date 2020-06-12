@@ -1,0 +1,50 @@
+{
+  "name": "typegraphql-sqlmancer-realworld-example-app",
+  "version": "0.0.0-dev",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "nest build",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:debug": "nest start --debug --watch",
+    "eslint:w": "watchexec -w src \"npm run eslint\"",
+    "eslint": "node node_modules/eslint/bin/eslint \"src/**/*.{ts,tsx}\"",
+    "eslint:fix": "npm run eslint -- --fix"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@nestjs/common": "7.1.3",
+    "@nestjs/core": "7.1.3",
+    "@nestjs/graphql": "^7.4.1",
+    "@nestjs/platform-express": "7.1.3",
+    "apollo-server": "^2.14.4",
+    "apollo-server-express": "^2.14.4",
+    "class-transformer": "^0.2.3",
+    "class-validator": "^0.12.2",
+    "graphql": "^15.1.0",
+    "graphql-query-complexity": "^0.6.0",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "6.5.5",
+    "graphql-tools": "^6.0.9",
+    "sqlite3": "^4.2.0",
+    "sqlmancer": "^0.3.3"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^7.2.0",
+    "@typescript-eslint/eslint-plugin": "^3.2.0",
+    "@typescript-eslint/parser": "^3.2.0",
+    "eslint": "^7.2.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-only-warn": "^1.0.2",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-simple-import-sort": "^5.0.3",
+    "eslint-plugin-unicorn": "^20.1.0",
+    "eslint-plugin-wix-editor": "^3.2.0",
+    "prettier": "^2.0.5",
+    "typescript": "^3.9.5",
+    "watchexec-bin": "^1.0.0"
+  }
+}
