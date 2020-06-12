@@ -1,5 +1,6 @@
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
+import { GraphQLSchemaHost } from '@nestjs/graphql';
 
 import { AppModule } from './app.module';
 
