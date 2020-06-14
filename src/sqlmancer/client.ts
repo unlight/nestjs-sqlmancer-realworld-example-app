@@ -1,11 +1,15 @@
 import Knex from 'knex';
 import { createSqlmancerClient } from 'sqlmancer';
 
+import { SqlmancerClient } from './types';
+
 export function createClient() {
-    const knex = Knex({
-        client: 'sqlite3',
-        connection: 'file:data.db',
-    });
-    const client = createSqlmancerClient('~schema.gql', knex);
+    const client: SqlmancerClient = createSqlmancerClient(
+        `${__dirname}/../**/*.graphql`,
+        Knex({
+            client: 'sqlite3',
+            connection: 'file:data.db',
+        }),
+    );
     return client;
 }

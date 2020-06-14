@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
+import { schemaDirectives } from 'sqlmancer';
 
 import { UserModule } from './user/user.module';
 
@@ -7,7 +8,10 @@ import { UserModule } from './user/user.module';
     imports: [
         UserModule,
         GraphQLModule.forRoot({
-            autoSchemaFile: `~schema.gql`,
+            typePaths: [`${__dirname}/**/*.graphql`],
+            schemaDirectives: {
+                ...schemaDirectives,
+            },
         }),
     ],
 })

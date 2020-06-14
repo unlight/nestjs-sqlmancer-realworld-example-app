@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "assets": ["**/*.graphql"],
     "plugins": ["@nestjs/graphql/plugin"]
   }
 }

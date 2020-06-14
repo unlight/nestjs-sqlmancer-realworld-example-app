@@ -1,0 +1,15 @@
+type Query {
+    me: User
+}
+
+type User {
+    id: ID!
+    email: String
+    name: String
+    password: String
+    bio: String
+    image: String
+    following: [User]!
+    followers: [User]!
+    favoriteArticles: [Article]!
+}

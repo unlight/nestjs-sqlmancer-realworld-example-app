@@ -1,0 +1,7 @@
+type Article @model(table: "Article", pk: "id") {
+    id: ID!
+}
+
+type Query {
+    articles: [Article]!
+}

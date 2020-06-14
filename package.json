@@ -17,7 +17,8 @@
     "start:debug": "nest start --debug --watch",
     "eslint:w": "watchexec -w src \"npm run eslint\"",
     "eslint": "node node_modules/eslint/bin/eslint \"src/**/*.{ts,tsx}\"",
-    "eslint:fix": "npm run eslint -- --fix"
+    "eslint:fix": "npm run eslint -- --fix",
+    "sqlmancer:g": "sqlmancer generate src/**/*.graphql src/sqlmancer/types.ts"
   },
   "author": "",
   "license": "ISC",
