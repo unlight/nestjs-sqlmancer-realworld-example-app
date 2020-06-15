@@ -13,3 +13,5 @@ export function createClient() {
     );
     return client;
 }
+
+export const repository = createClient();

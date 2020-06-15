@@ -1,7 +1,45 @@
 type Article @model(table: "Article", pk: "id") {
     id: ID!
+    slug: String
+    title: String
+    description: String
+    body: String
+    # tags  Tag[]
+    # createdAt  DateTime  @default(now())
+    # updatedAt  DateTime  @updatedAt
+    favoritesCount: Int
+    # author    User  @relation(name: "ArticleAuthor", fields: [authorId], references: [id])
+    # authorId  String
+    # favoritedBy  User[]  @relation(name: "FavoritedArticles", references: [id])
+    # comments  Comment[]
 }
 
+input ArticleCreateInput {
+    title: String!
+    description: String!
+    body: String!
+    tags: [String!]
+}
+
+# input ArticleWhereInput {
+# id: StringFilter
+#     slug: StringFilter
+#     title: StringFilter
+#     description: StringFilter
+#     body: StringFilter
+#     tags: TagFilter
+#     createdAt: DateTimeFilter
+#     updatedAt: DateTimeFilter
+#     favoritesCount: IntFilter
+#     authorId: StringFilter
+#     favoritedBy: UserFilter
+#     comments: CommentFilter
+#     AND: [ArticleWhereInput!]
+#     OR: [ArticleWhereInput!]
+#     NOT: [ArticleWhereInput!]
+#     author: UserWhereInput
+# }
+
 type Query {
-    articles: [Article]!
+    articles: [Article]! @where
 }
