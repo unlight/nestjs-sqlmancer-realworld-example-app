@@ -1,5 +1,5 @@
 import { Args, Query, Resolver, Info } from '@nestjs/graphql';
-import { repository } from '../sqlmancer/client';
+import { client } from '../sqlmancer/client';
 
 /**
  * Resolver for article type.
@@ -10,8 +10,8 @@ export class ArticleResolver {
 
     @Query()
     async articles(@Args() args, @Info() info) {
-        console.log('args', args);
-        const result = await repository.models.Article.findMany().resolveInfo(info).execute();
+        debugger;
+        const result = await client.models.Article.findMany().resolveInfo(info).execute();
         return result;
     }
 }

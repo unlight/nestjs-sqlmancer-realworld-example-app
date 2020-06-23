@@ -2,7 +2,7 @@ type Query {
     me: User
 }
 
-type User {
+type User @model(table: "User", pk: "id") {
     id: ID!
     email: String
     name: String

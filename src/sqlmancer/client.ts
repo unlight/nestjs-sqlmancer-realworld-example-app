@@ -2,16 +2,20 @@ import Knex from 'knex';
 import { createSqlmancerClient } from 'sqlmancer';
 
 import { SqlmancerClient } from './types';
+import path from 'path';
 
 export function createClient() {
     const client: SqlmancerClient = createSqlmancerClient(
         `${__dirname}/../**/*.graphql`,
         Knex({
+            debug: true,
             client: 'sqlite3',
-            connection: 'file:data.db',
+            connection: {
+                filename: 'data.db',
+            },
         }),
     );
     return client;
 }
 
-export const repository = createClient();
+export const client = createClient();

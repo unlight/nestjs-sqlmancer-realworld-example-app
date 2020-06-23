@@ -4,11 +4,11 @@ type Article @model(table: "Article", pk: "id") {
     title: String
     description: String
     body: String
-    # tags  Tag[]
+    # tags  Tag[]  @relate(on: [{ from: "language_id", to: "id" }])
     # createdAt  DateTime  @default(now())
     # updatedAt  DateTime  @updatedAt
     favoritesCount: Int
-    # author    User  @relation(name: "ArticleAuthor", fields: [authorId], references: [id])
+    author: User @relate(on: [{ from: "authorId", to: "id" }], pagination: OFFSET)
     # authorId  String
     # favoritedBy  User[]  @relation(name: "FavoritedArticles", references: [id])
     # comments  Comment[]
@@ -41,5 +41,5 @@ input ArticleCreateInput {
 # }
 
 type Query {
-    articles: [Article]! @where
+    articles: [Article]! @where @paginate
 }
